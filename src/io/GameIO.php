@@ -67,7 +67,9 @@ final class GameIO
             throw new \Exception("Failure limit exceeded");
         }
 
-        $displayStr = "{$player->getPlayerName()}, please select tile: ";
+        $playerColor = $this->playerColors[$player->getPlayerNumber()];
+        $endColor    = self::COLOR_NC;
+        $displayStr  = "{$playerColor}{$player->getPlayerName()}$endColor, please select tile: ";
 
         $tileSelection = readline($displayStr);
 
